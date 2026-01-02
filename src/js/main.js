@@ -15,7 +15,7 @@ const checkValue = () => {
 dodajSzklanke.addEventListener("click", () => {
   let pobranieSzklanki = parseInt(localStorage.getItem(key));
   pobranieSzklanki = pobranieSzklanki + 1;
-  localStorage.setItem(key, JSON.stringify(pobranieSzklanki));
+  localStorage.setItem(key, pobranieSzklanki);
   checkValue();
 });
 
@@ -24,7 +24,7 @@ usunSzklanke.addEventListener("click", () => {
   if (pobranieSzklanki > 0) {
     pobranieSzklanki = pobranieSzklanki - 1;
   }
-  localStorage.setItem(key, JSON.stringify(pobranieSzklanki));
+  localStorage.setItem(key, pobranieSzklanki);
   checkValue();
 });
 

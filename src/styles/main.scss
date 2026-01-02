@@ -4,6 +4,7 @@
 html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
 
 *,
@@ -40,8 +41,10 @@ header {
 
 button {
   width: 224px;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  touch-action: manipulation;
 }
 
 .glass-container {
@@ -60,4 +63,9 @@ button {
 
 .padding-bottom {
   margin-bottom: 24px;
+}
+
+.button-special {
+  background-color: transparent;
+  color: #ef4444;
 }
