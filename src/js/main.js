@@ -1,7 +1,14 @@
 const dodajSzklanke = document.querySelector(".addGlass");
 const usunSzklanke = document.querySelector(".removeGlass");
 const numberText = document.querySelector(".number-js");
-const key = new Date().toISOString().slice(0, 10);
+let key = new Date().toLocaleString().slice(0, 9);
+
+setInterval(() => {
+  if (key !== new Date().toLocaleString().slice(0, 9)) {
+    key = new Date().toLocaleString().slice(0, 9);
+    checkValue();
+  }
+}, 60000);
 
 const checkValue = () => {
   if (localStorage.getItem(key) === null) {
@@ -11,6 +18,8 @@ const checkValue = () => {
     numberText.innerHTML = parseInt(localStorage.getItem(key));
   }
 };
+
+checkValue();
 
 dodajSzklanke.addEventListener("click", () => {
   let pobranieSzklanki = parseInt(localStorage.getItem(key));
@@ -27,5 +36,3 @@ usunSzklanke.addEventListener("click", () => {
   localStorage.setItem(key, pobranieSzklanki);
   checkValue();
 });
-
-checkValue();
